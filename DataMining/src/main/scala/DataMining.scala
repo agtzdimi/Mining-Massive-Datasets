@@ -19,16 +19,16 @@ object DataMining {
     conf.set("spark.executor.memory", "2g")
     conf.set("spark.cores.max", "8")
     conf.set("spark.eventLog.enabled", "true")
-    conf.set("spark.eventLog.dir", "src/main/resources/spark-logs")
-    Logger.getLogger("org").setLevel(Level.OFF)
-    Logger.getLogger("akka").setLevel(Level.OFF)
+    conf.set("spark.eventLog.dir", "spark-logs")
+    Logger.getLogger("org").setLevel(Level.ERROR)
+    Logger.getLogger("akka").setLevel(Level.ERROR)
     val sc = new SparkContext(conf)
     val ss = SparkSession.builder().master("local[*]").appName("Data Mining Project").getOrCreate()
     import ss.implicits._ // For implicit conversions like converting RDDs to DataFrames
 
     var inputElements = "src/main/resources/sample_input.txt"
     // var inputElements = "src/main/resources/inflated_sample.csv"
-    if (args.size > 0) {
+    if (args.length > 0) {
       inputElements = args(0)
     }
 
