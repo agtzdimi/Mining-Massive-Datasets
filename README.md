@@ -13,8 +13,8 @@ Installation steps for UNIX environments:
 - `cd 'spark installation directory'`
 - `wget https://archive.apache.org/dist/spark/spark-2.4.4/spark-2.4.4-bin-hadoop2.7.tgz`
 - `tar -zxvf spark-2.4.4-bin-hadoop2.7.tgz`
-- `echo -e "export SPARK_HOME=$(pwd)/spark-2.4.4-bin-hadoop2.7\nexport PATH=$SPARK_HOME/bin:$PATH" >> ~/.bashrc`
-- 'source ~/.bashrc'
+- `echo -e "export SPARK_HOME=$(pwd)/spark-2.4.4-bin-hadoop2.7\nexport PATH=\$SPARK_HOME/bin:\$PATH" >> ~/.bashrc`
+- `source ~/.bashrc`
 - `cd 'To the directory containing the .jar file'`
 
 Before executing the .jar file a directory named as "spark-logs" is needed in the current working directory in order to create the log files
